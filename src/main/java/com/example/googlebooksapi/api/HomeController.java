@@ -1,6 +1,7 @@
 package com.example.googlebooksapi.api;
 
 import com.example.googlebooksapi.dtos.BookResponse;
+import com.example.googlebooksapi.dtos.OpenAIResponse;
 import com.example.googlebooksapi.dtos.RecommendationRequest;
 import com.example.googlebooksapi.services.BookService;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,7 @@ public class HomeController {
     }
 
     @PostMapping("/recommendation")
-    public RecommendationRequest getRecommendation(@RequestBody RecommendationRequest request) {
-        // TODO: Implementation
-        return request;
+    public OpenAIResponse getRecommendation(@RequestBody RecommendationRequest request) {
+        return bookService.getRecommendation(request);
     }
 }
